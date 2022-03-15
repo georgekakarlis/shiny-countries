@@ -1,0 +1,49 @@
+<ng-template *ngIf="countryDetails$ else elseBlock">
+  <div class="details-wrapper">
+    <div class="details-back" [routerLink]="['/']">
+      <span>
+        <fa-icon [icon]="faArrowLeft" class='search-icon search'></fa-icon> Back
+      </span>
+    </div>
+    <div class='details-inner'>
+      <div class='details-flag'>
+        <img [src]="countryDetails.flag" alt="img" class="">
+      </div>
+      <div class='details-text'>
+        <h2>{{countryDetails.name}}</h2>
+        <div class='inner-details'>
+          <div class='inner-left'>
+            <div>Native Name: <span>{{countryDetails.nativeName}}</span></div>
+            <div>Population: <span>{{countryDetails.population}}</span></div>
+            <div>Region: <span>{{countryDetails.region}}</span></div>
+            <div>Subregion: <span>{{countryDetails.subregion}}</span></div>
+            <div>Capital: <span>{{countryDetails.capital}}</span></div>
+          </div>
+          <div class='inner-right'>
+            <div>Top Level Domain: <span
+                *ngFor="let level of countryDetails.topLevelDomain let isLast=last">{{level}}{{isLast ? ' ' : ', '}}</span>
+            </div>
+            <div> Currencies:
+              <span
+                *ngFor="let currency of countryDetails.currencies let isLast=last">{{currency.name}}{{isLast ? '.' : ', '}}</span>
+            </div>
+            <div>Languages:
+              <span
+                *ngFor="let language of countryDetails.languages let isLast=last">{{language.name}}{{isLast ? '.' : ', '}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="details-border">
+          <div *ngIf="countryDetails.borders && countryDetails.borders.length >0"> Border Country:
+            <span *ngFor="let border of countryDetails.borders">
+              {{border}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #elseBlock >
+  Content to render when condition is false.
+</ng-template>

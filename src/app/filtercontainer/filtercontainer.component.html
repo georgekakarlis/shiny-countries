@@ -1,0 +1,17 @@
+<div class="filter-container">
+  <div class="filter-input shadow">
+    <div class="search-wrapper">
+      <fa-icon [icon]="faSearch" class='search-icon search'></fa-icon>
+      <input type="text" (input)="onSearchChange($event.target.value)" placeholder="Search for a country..."
+        class="search-input search" />
+    </div>
+  </div>
+  <div class="filter-dropdown shadow">
+    <div class='dropdown-text'>
+      <select class="region-control" (change)="changeRegion($event)">
+        <option value=''>Filter by Region</option>
+        <option *ngFor="let region of RegionList" value={{region}}>{{region}}</option>
+      </select>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+* {
+  padding: 0;
+  margin: 0
+}
+
+.shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+@mixin light-theme {
+  background: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
+@mixin dark-theme {
+  background: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
+}
+
+.dark-theme {
+  background: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
+}
+
+.light-theme {
+  background: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
+body,
+html {
+  font-family: 'Nunito', sans-serif;
+  background: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
+header {
+  background: inherit;
+}
+

@@ -1,0 +1,9 @@
+<div [routerLink]="['../details',country.name]" class="country-inner">
+  <img class='country-flag' width=100% [src]="country.flag" />
+  <div class="country-text">
+    <h2>{{country.name}}</h2>
+    <div> <strong>Population</strong> <span>{{country.population}}</span></div>
+    <div><strong>Region</strong> {{country.region}}</div>
+    <div><strong>Capital</strong> {{country.capital}}</div>
+  </div>
+</div>
